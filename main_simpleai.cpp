@@ -31,23 +31,6 @@
 
 using namespace std;
 
-void save_filter(int id, const vector<string>& words, const string& mask, char ch){
-    string myText;
-    if(id == 1){
-        ofstream MyReadFile("input_filter_mask.txt");
-        cout << ch << endl << mask << endl;
-        for(auto i:words)
-            MyReadFile << i << endl;
-        MyReadFile.close();
-    }
-    else{
-        ofstream MyReadFile("output_filter_mask.txt");
-        for(auto i:words)
-            MyReadFile << i << endl;
-        MyReadFile.close();
-    }
-}
-
 int main()
 {
     // B0
@@ -116,9 +99,9 @@ int main()
                 break;
             } else {
                 cout << "out" <<endl;
-                save_filter(1,candidateWords, responsedMask, nextChar);
+                //save_filter(1,candidateWords, responsedMask, nextChar);
                 candidateWords = filterWordsByMask(candidateWords, responsedMask, nextChar);
-                save_filter(0,candidateWords, responsedMask, nextChar);
+                //save_filter(0,candidateWords, responsedMask, nextChar);
                 //cout << "Size of candidates: " << candidateWords.size() << endl;
                 //cout << candidateWords[0] << " " << candidateWords[candidateWords.size()-1] << endl;
             }
